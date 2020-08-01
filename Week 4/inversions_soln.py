@@ -11,9 +11,10 @@ def get_number_of_inversions(a, b, left, right):
     #write your code here
     return number_of_inversions
 '''
-'''
+count = 0
 def merger(a, l, u, m):
     
+    global count
     b = a[l:m+1]
     c = a[m+1:u+1]
     nb = len(b)
@@ -24,9 +25,11 @@ def merger(a, l, u, m):
         if b[i] <= c[j]:
             a[k] = b[i]
             i += 1
+            
         else:
             a[k] = c[j]
             j += 1
+            count +=1
         k += 1
     
     while i < nb:
@@ -48,7 +51,10 @@ def mergeSort(a, l, u):
     mergeSort(a, m+1, u)
     merger(a, l, u, m)
     
-'''    
+    
+
+
+'''
 def merger(b,c):
     
     p = len(b)
@@ -61,6 +67,7 @@ def merger(b,c):
         else:
             d.append(c[j])
             j+=1
+            count += 1
     return d
 
 def mergeSort(a):
@@ -73,15 +80,15 @@ def mergeSort(a):
     d = merger(b,c)
     return d
 
-
+'''
 
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))
-    
+    count = 0
     n = len(a)
-    b, c, d = [],[],[]
+    #b, c, d = [],[],[]
     
-    d = mergeSort(a[0:n])
-    print(d)
+    mergeSort(a, 0, n)
+    print(count - n)
 
