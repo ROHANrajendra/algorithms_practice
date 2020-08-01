@@ -7,9 +7,9 @@ def binary_search(a, x):
     while left < right:
         mid = int((left + right)/2)
         if x > a[mid]:
-            left = mid + 1
+            left = mid 
         elif x < a[mid]:
-            right = mid - 1
+            right = mid 
         elif x == a[mid]:
             return mid
     return -1
@@ -29,4 +29,5 @@ if __name__ == '__main__':
     a = data[1 : n + 1]
     for x in data[n + 2:]:
         # replace with the call to binary_search when implemented
+        # print(x)
         print(binary_search(a, x), end = ' ')
