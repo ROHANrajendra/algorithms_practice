@@ -22,7 +22,7 @@ def merger(a, l, u, m):
     i, j, k = 0, 0, l
 
     while i < nb and j < nc:
-        if b[i] <= c[j]:
+        if b[i] < c[j]:
             a[k] = b[i]
             i += 1
             
@@ -90,5 +90,6 @@ if __name__ == '__main__':
     #b, c, d = [],[],[]
     
     mergeSort(a, 0, n)
-    print(count - n)
+    # print(a)
+    print(count)
 
