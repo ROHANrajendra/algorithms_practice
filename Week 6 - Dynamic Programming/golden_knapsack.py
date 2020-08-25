@@ -5,7 +5,7 @@ import numpy
 def optimal_weight(W, w):
     # write your code here
     # weights = [[0 for x in range(len(w))] for x in range(W+1)]
-    weights = matrix = numpy.zeros(shape=(len(w), W + 1), dtype=int)
+    weights = numpy.zeros(shape=(len(w), W + 1), dtype=int)
     result = 0
     for i in range(len(w)):
         for j in range(1, W+1):
